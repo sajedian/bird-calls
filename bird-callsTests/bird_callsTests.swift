@@ -9,6 +9,7 @@
 import XCTest
 @testable import bird_calls
 
+// swiftlint:disable type_name
 class bird_callsTests: XCTestCase {
 
     override func setUpWithError() throws {

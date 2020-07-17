@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SoundWaveCell" id="m4Q-45-HYh" customClass="SoundWaveCell" customModule="bird_calls" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="108"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m4Q-45-HYh" id="obe-i0-DaB">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="108"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-CP-Oi2" userLabel="ColorView">
+                        <rect key="frame" x="10" y="2" width="351" height="98"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDh-Wy-C6r">
+                                <rect key="frame" x="10" y="24" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="a9S-mA-9aj"/>
+                                    <constraint firstAttribute="width" constant="50" id="buV-xZ-JKy"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="play.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38709160509163693" green="0.38062552962491841" blue="0.8465312027991726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iDh-Wy-C6r" firstAttribute="centerY" secondItem="YdM-CP-Oi2" secondAttribute="centerY" id="g9W-rw-IKh"/>
+                            <constraint firstAttribute="height" constant="98" id="gxR-bg-liH"/>
+                            <constraint firstItem="iDh-Wy-C6r" firstAttribute="leading" secondItem="YdM-CP-Oi2" secondAttribute="leading" constant="10" id="llQ-XZ-eAC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="YdM-CP-Oi2" secondAttribute="bottom" constant="8" id="KJ8-9V-akA"/>
+                    <constraint firstItem="YdM-CP-Oi2" firstAttribute="leading" secondItem="obe-i0-DaB" secondAttribute="leading" constant="10" id="PcY-K6-Av9"/>
+                    <constraint firstAttribute="trailing" secondItem="YdM-CP-Oi2" secondAttribute="trailing" constant="10" id="p1b-jw-ea6"/>
+                    <constraint firstItem="YdM-CP-Oi2" firstAttribute="centerX" secondItem="obe-i0-DaB" secondAttribute="centerX" id="uSO-aA-QZp"/>
+                    <constraint firstItem="YdM-CP-Oi2" firstAttribute="top" secondItem="obe-i0-DaB" secondAttribute="top" constant="2" id="wfA-5h-Xho"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="colorView" destination="YdM-CP-Oi2" id="XZX-dX-pUn"/>
+            </connections>
+            <point key="canvasLocation" x="-190.57971014492756" y="91.741071428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

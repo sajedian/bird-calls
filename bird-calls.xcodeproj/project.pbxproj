@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		9E3DE56E24C219F70094D078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE56D24C219F70094D078 /* AppDelegate.swift */; };
 		9E3DE57024C219F70094D078 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE56F24C219F70094D078 /* SceneDelegate.swift */; };
-		9E3DE57224C219F70094D078 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE57124C219F70094D078 /* FirstViewController.swift */; };
+		9E3DE57224C219F70094D078 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE57124C219F70094D078 /* QuizViewController.swift */; };
 		9E3DE57424C219F70094D078 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE57324C219F70094D078 /* SecondViewController.swift */; };
 		9E3DE57724C219F70094D078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE57524C219F70094D078 /* Main.storyboard */; };
 		9E3DE57924C219FB0094D078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE57824C219FB0094D078 /* Assets.xcassets */; };
 		9E3DE57C24C219FB0094D078 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE57A24C219FB0094D078 /* LaunchScreen.storyboard */; };
 		9E3DE58724C219FB0094D078 /* bird_callsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE58624C219FB0094D078 /* bird_callsTests.swift */; };
 		9E3DE59224C219FB0094D078 /* bird_callsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE59124C219FB0094D078 /* bird_callsUITests.swift */; };
+		9E3DE5A024C21CD60094D078 /* SoundWaveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE59F24C21CD60094D078 /* SoundWaveCell.xib */; };
+		9E3DE5A224C21D370094D078 /* SoundWaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE5A124C21D360094D078 /* SoundWaveCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		9E3DE56A24C219F70094D078 /* bird-calls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bird-calls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E3DE56D24C219F70094D078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E3DE56F24C219F70094D078 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9E3DE57124C219F70094D078 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9E3DE57124C219F70094D078 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		9E3DE57324C219F70094D078 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9E3DE57624C219F70094D078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E3DE57824C219FB0094D078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		9E3DE58D24C219FB0094D078 /* bird-callsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bird-callsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E3DE59124C219FB0094D078 /* bird_callsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bird_callsUITests.swift; sourceTree = "<group>"; };
 		9E3DE59324C219FB0094D078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E3DE59F24C21CD60094D078 /* SoundWaveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoundWaveCell.xib; sourceTree = "<group>"; };
+		9E3DE5A124C21D360094D078 /* SoundWaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundWaveCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +107,14 @@
 			children = (
 				9E3DE56D24C219F70094D078 /* AppDelegate.swift */,
 				9E3DE56F24C219F70094D078 /* SceneDelegate.swift */,
-				9E3DE57124C219F70094D078 /* FirstViewController.swift */,
+				9E3DE57124C219F70094D078 /* QuizViewController.swift */,
 				9E3DE57324C219F70094D078 /* SecondViewController.swift */,
+				9E3DE5A124C21D360094D078 /* SoundWaveCell.swift */,
 				9E3DE57524C219F70094D078 /* Main.storyboard */,
 				9E3DE57824C219FB0094D078 /* Assets.xcassets */,
 				9E3DE57A24C219FB0094D078 /* LaunchScreen.storyboard */,
 				9E3DE57D24C219FB0094D078 /* Info.plist */,
+				9E3DE59F24C21CD60094D078 /* SoundWaveCell.xib */,
 			);
 			path = "bird-calls";
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 				9E3DE56624C219F70094D078 /* Sources */,
 				9E3DE56724C219F70094D078 /* Frameworks */,
 				9E3DE56824C219F70094D078 /* Resources */,
+				9E3DE5A324C220E60094D078 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -236,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E3DE57C24C219FB0094D078 /* LaunchScreen.storyboard in Resources */,
+				9E3DE5A024C21CD60094D078 /* SoundWaveCell.xib in Resources */,
 				9E3DE57924C219FB0094D078 /* Assets.xcassets in Resources */,
 				9E3DE57724C219F70094D078 /* Main.storyboard in Resources */,
 			);
@@ -257,15 +265,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9E3DE5A324C220E60094D078 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9E3DE56624C219F70094D078 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9E3DE57424C219F70094D078 /* SecondViewController.swift in Sources */,
-				9E3DE57224C219F70094D078 /* FirstViewController.swift in Sources */,
+				9E3DE57224C219F70094D078 /* QuizViewController.swift in Sources */,
 				9E3DE56E24C219F70094D078 /* AppDelegate.swift in Sources */,
 				9E3DE57024C219F70094D078 /* SceneDelegate.swift in Sources */,
+				9E3DE5A224C21D370094D078 /* SoundWaveCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
