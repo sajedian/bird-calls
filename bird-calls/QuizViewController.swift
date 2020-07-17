@@ -7,11 +7,16 @@
 //
 
 import UIKit
-import AVAudioPlayer
+import AVFoundation
 
 class QuizViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
+    var avPlayer: AVAudioPlayer?
 
+    var filenames = ["XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3",
+                     "XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3",
+                     "XC509128 - Vermiculated Fishing Owl - Scotopelia bouvieri.mp3"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -29,6 +34,29 @@ extension QuizViewController: UITableViewDataSource {
                                                        for: indexPath) as? SoundWaveCell else {
             fatalError("Failed to dequeue SoundWaveCell")
         }
+        cell.delegate = self
         return cell
     }
+}
+
+extension QuizViewController: SoundWaveCellDelegate {
+
+    func soundWaveCellPlayButtonTapped(_ soundWaveCell: SoundWaveCell) {
+        guard let row = tableView.indexPath(for: soundWaveCell)?.row else {
+            print("Failed to find index for soundWaveCell")
+            return
+        }
+        let filename = filenames[row]
+
+        let path = Bundle.main.path(forResource: filename, ofType: nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            avPlayer = try AVAudioPlayer(contentsOf: url)
+            avPlayer?.play()
+        } catch {
+            print("error loading file")
+        }
+    }
+
 }

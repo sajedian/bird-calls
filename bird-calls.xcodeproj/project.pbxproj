@@ -18,6 +18,9 @@
 		9E3DE59224C219FB0094D078 /* bird_callsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE59124C219FB0094D078 /* bird_callsUITests.swift */; };
 		9E3DE5A024C21CD60094D078 /* SoundWaveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE59F24C21CD60094D078 /* SoundWaveCell.xib */; };
 		9E3DE5A224C21D370094D078 /* SoundWaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE5A124C21D360094D078 /* SoundWaveCell.swift */; };
+		9E3DE5A724C24AC40094D078 /* XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE5A424C24AC30094D078 /* XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3 */; };
+		9E3DE5A824C24AC40094D078 /* XC509128 - Vermiculated Fishing Owl - Scotopelia bouvieri.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE5A524C24AC40094D078 /* XC509128 - Vermiculated Fishing Owl - Scotopelia bouvieri.mp3 */; };
+		9E3DE5A924C24AC40094D078 /* XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE5A624C24AC40094D078 /* XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		9E3DE59324C219FB0094D078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E3DE59F24C21CD60094D078 /* SoundWaveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoundWaveCell.xib; sourceTree = "<group>"; };
 		9E3DE5A124C21D360094D078 /* SoundWaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundWaveCell.swift; sourceTree = "<group>"; };
+		9E3DE5A424C24AC30094D078 /* XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3"; sourceTree = "<group>"; };
+		9E3DE5A524C24AC40094D078 /* XC509128 - Vermiculated Fishing Owl - Scotopelia bouvieri.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "XC509128 - Vermiculated Fishing Owl - Scotopelia bouvieri.mp3"; sourceTree = "<group>"; };
+		9E3DE5A624C24AC40094D078 /* XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 				9E3DE57A24C219FB0094D078 /* LaunchScreen.storyboard */,
 				9E3DE57D24C219FB0094D078 /* Info.plist */,
 				9E3DE59F24C21CD60094D078 /* SoundWaveCell.xib */,
+				9E3DE5AA24C24AD50094D078 /* Bird Sounds */,
 			);
 			path = "bird-calls";
 			sourceTree = "<group>";
@@ -135,6 +142,16 @@
 				9E3DE59324C219FB0094D078 /* Info.plist */,
 			);
 			path = "bird-callsUITests";
+			sourceTree = "<group>";
+		};
+		9E3DE5AA24C24AD50094D078 /* Bird Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9E3DE5A624C24AC40094D078 /* XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3 */,
+				9E3DE5A424C24AC30094D078 /* XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3 */,
+				9E3DE5A524C24AC40094D078 /* XC509128 - Vermiculated Fishing Owl - Scotopelia bouvieri.mp3 */,
+			);
+			path = "Bird Sounds";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,10 +259,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E3DE5A924C24AC40094D078 /* XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3 in Resources */,
 				9E3DE57C24C219FB0094D078 /* LaunchScreen.storyboard in Resources */,
 				9E3DE5A024C21CD60094D078 /* SoundWaveCell.xib in Resources */,
 				9E3DE57924C219FB0094D078 /* Assets.xcassets in Resources */,
 				9E3DE57724C219F70094D078 /* Main.storyboard in Resources */,
+				9E3DE5A824C24AC40094D078 /* XC509128 - Vermiculated Fishing Owl - Scotopelia bouvieri.mp3 in Resources */,
+				9E3DE5A724C24AC40094D078 /* XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
