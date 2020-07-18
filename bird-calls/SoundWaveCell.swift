@@ -17,12 +17,23 @@ class SoundWaveCell: UITableViewCell {
     @IBOutlet var playButton: UIButton!
 
     @IBAction func playButtonTapped(_ sender: UIButton) {
-        if let delegate = delegate {
-            delegate.soundWaveCellPlayButtonTapped(self)
-        }
+        isPlaying = !isPlaying
+        delegate?.soundWaveCellPlayButtonTapped(self)
     }
 
+    let playImage = UIImage(systemName: "play.circle")
+    let pauseImage = UIImage(systemName: "pause.circle")
+
     weak var delegate: SoundWaveCellDelegate?
+    var isPlaying: Bool = false {
+        didSet {
+            if isPlaying {
+                playButton.setImage(playImage, for: .normal)
+            } else {
+                playButton.setImage(pauseImage, for: .normal)
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,13 +45,11 @@ class SoundWaveCell: UITableViewCell {
         colorView.layer.shadowRadius = 2
         colorView.clipsToBounds = false
         colorView.layer.masksToBounds = false
-        
+
         contentView.layer.masksToBounds = false
         contentView.clipsToBounds = false
 
         clipsToBounds = false
         layer.masksToBounds = false
        }
-
-
 }
