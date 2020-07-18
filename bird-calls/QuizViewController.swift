@@ -11,7 +11,10 @@ import AVFoundation
 
 class QuizViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
+
     var avPlayer: AVAudioPlayer?
+
+    var previousPlayingCell: SoundWaveCell?
 
     var filenames = ["XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3",
                      "XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3",
@@ -46,6 +49,7 @@ extension QuizViewController: SoundWaveCellDelegate {
         let url = URL(fileURLWithPath: path)
         do {
             avPlayer = try AVAudioPlayer(contentsOf: url)
+            avPlayer?.delegate = self
             avPlayer?.play()
         } catch {
             print("error loading file")
@@ -63,10 +67,22 @@ extension QuizViewController: SoundWaveCellDelegate {
             return
         }
         if soundWaveCell.isPlaying {
-            pauseAudio()
-        } else {
             playAudio(index: row)
+            if previousPlayingCell != soundWaveCell {
+                previousPlayingCell?.isPlaying = false
+            }
+            previousPlayingCell = soundWaveCell
+        } else {
+            pauseAudio()
         }
     }
 
+}
+
+extension QuizViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            previousPlayingCell?.isPlaying = false
+        }
+    }
 }
