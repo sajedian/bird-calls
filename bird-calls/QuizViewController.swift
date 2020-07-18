@@ -63,9 +63,9 @@ extension QuizViewController: SoundWaveCellDelegate {
             return
         }
         if soundWaveCell.isPlaying {
-            pauseAudio()
-        } else {
             playAudio(index: row)
+        } else {
+            pauseAudio()
         }
     }
 

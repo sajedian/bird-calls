@@ -17,8 +17,10 @@ class SoundWaveCell: UITableViewCell {
     @IBOutlet var playButton: UIButton!
 
     @IBAction func playButtonTapped(_ sender: UIButton) {
+        print(isPlaying)
         isPlaying = !isPlaying
         delegate?.soundWaveCellPlayButtonTapped(self)
+        print(isPlaying)
     }
 
     let playImage = UIImage(systemName: "play.circle")
@@ -27,10 +29,11 @@ class SoundWaveCell: UITableViewCell {
     weak var delegate: SoundWaveCellDelegate?
     var isPlaying: Bool = false {
         didSet {
+            print(isPlaying)
             if isPlaying {
-                playButton.setImage(playImage, for: .normal)
-            } else {
                 playButton.setImage(pauseImage, for: .normal)
+            } else {
+                playButton.setImage(playImage, for: .normal)
             }
         }
     }
