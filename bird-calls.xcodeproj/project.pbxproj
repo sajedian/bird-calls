@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		9E3DE5A924C24AC40094D078 /* XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE5A624C24AC40094D078 /* XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3 */; };
 		9E3DE5AC24C2728D0094D078 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DE5AB24C2728D0094D078 /* AudioController.swift */; };
 		9E3DE5AE24C299AD0094D078 /* XC55554 - Rufous-capped Spinetail - Synallaxis ruficapilla.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DE5AD24C299AD0094D078 /* XC55554 - Rufous-capped Spinetail - Synallaxis ruficapilla.mp3 */; };
+		9E70017724C396420054D2D7 /* FDWaveformView in Frameworks */ = {isa = PBXBuildFile; productRef = 9E70017624C396420054D2D7 /* FDWaveformView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E70017724C396420054D2D7 /* FDWaveformView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +176,9 @@
 			dependencies = (
 			);
 			name = "bird-calls";
+			packageProductDependencies = (
+				9E70017624C396420054D2D7 /* FDWaveformView */,
+			);
 			productName = "bird-calls";
 			productReference = 9E3DE56A24C219F70094D078 /* bird-calls.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +251,9 @@
 				Base,
 			);
 			mainGroup = 9E3DE56124C219F70094D078;
+			packageReferences = (
+				9E70017524C396420054D2D7 /* XCRemoteSwiftPackageReference "FDWaveformView" */,
+			);
 			productRefGroup = 9E3DE56B24C219F70094D078 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -647,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9E70017524C396420054D2D7 /* XCRemoteSwiftPackageReference "FDWaveformView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fulldecent/FDWaveformView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9E70017624C396420054D2D7 /* FDWaveformView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E70017524C396420054D2D7 /* XCRemoteSwiftPackageReference "FDWaveformView" */;
+			productName = FDWaveformView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9E3DE56224C219F70094D078 /* Project object */;
 }

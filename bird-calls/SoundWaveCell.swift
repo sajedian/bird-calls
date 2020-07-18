@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FDWaveformView
 
 protocol SoundWaveCellDelegate: class {
     func soundWaveCellPlayButtonTapped(_ soundWaveCell: SoundWaveCell)
@@ -15,6 +16,7 @@ class SoundWaveCell: UITableViewCell {
 
     @IBOutlet var colorView: UIView!
     @IBOutlet var playButton: UIButton!
+    @IBOutlet var waveFormView: FDWaveformView!
 
     @IBAction func playButtonTapped(_ sender: UIButton) {
         print(isPlaying, 1)
@@ -26,11 +28,13 @@ class SoundWaveCell: UITableViewCell {
     let playImage = UIImage(systemName: "play.circle")
     let pauseImage = UIImage(systemName: "pause.circle")
 
+
     weak var delegate: SoundWaveCellDelegate?
     var isPlaying: Bool = false {
         didSet {
             if isPlaying {
                 playButton.setImage(pauseImage, for: .normal)
+
             } else {
                 playButton.setImage(playImage, for: .normal)
             }
@@ -53,5 +57,12 @@ class SoundWaveCell: UITableViewCell {
 
         clipsToBounds = false
         layer.masksToBounds = false
+
+        waveFormView.wavesColor = UIColor.white.withAlphaComponent(0.75)
+        waveFormView.progressColor = .green
+
+
        }
+
+    
 }

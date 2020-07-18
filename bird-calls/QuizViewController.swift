@@ -8,11 +8,13 @@
 
 import UIKit
 import AVFoundation
+import FDWaveformView
 
 class QuizViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
     var avPlayer: AVAudioPlayer?
+    var waveform = FDWaveformView()
 
     var previousPlayingCell: SoundWaveCell?
 
@@ -23,6 +25,7 @@ class QuizViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SoundWaveCell", bundle: nil), forCellReuseIdentifier: "SoundWaveCell")
+
     }
 }
 
@@ -36,6 +39,9 @@ extension QuizViewController: UITableViewDataSource {
                                                        for: indexPath) as? SoundWaveCell else {
             fatalError("Failed to dequeue SoundWaveCell")
         }
+        let path = Bundle.main.path(forResource: filenames[indexPath.row], ofType: nil)!
+        let url = URL(fileURLWithPath: path)
+        cell.waveFormView.audioURL = url
         cell.delegate = self
         return cell
     }
@@ -43,14 +49,22 @@ extension QuizViewController: UITableViewDataSource {
 
 extension QuizViewController: SoundWaveCellDelegate {
 
-    func playAudio(index: Int) {
+    func playAudio(index: Int, cell: SoundWaveCell) {
         let filename = filenames[index]
         let path = Bundle.main.path(forResource: filename, ofType: nil)!
         let url = URL(fileURLWithPath: path)
         do {
             avPlayer = try AVAudioPlayer(contentsOf: url)
             avPlayer?.delegate = self
+            if let duration = avPlayer?.duration, let waveFormView = cell.waveFormView {
+                let totalSamples = waveFormView.totalSamples
+                UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: {
+                    waveFormView.highlightedSamples = 0..<totalSamples
+                })
+            }
+
             avPlayer?.play()
+
         } catch {
             print("error loading file")
         }
@@ -67,7 +81,7 @@ extension QuizViewController: SoundWaveCellDelegate {
             return
         }
         if soundWaveCell.isPlaying {
-            playAudio(index: row)
+            playAudio(index: row, cell: soundWaveCell)
             if previousPlayingCell != soundWaveCell {
                 previousPlayingCell?.isPlaying = false
             }
