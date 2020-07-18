@@ -8,13 +8,36 @@
 
 import UIKit
 
+protocol SoundWaveCellDelegate: class {
+    func soundWaveCellPlayButtonTapped(_ soundWaveCell: SoundWaveCell)
+}
 class SoundWaveCell: UITableViewCell {
 
     @IBOutlet var colorView: UIView!
+    @IBOutlet var playButton: UIButton!
+
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+        isPlaying = !isPlaying
+        delegate?.soundWaveCellPlayButtonTapped(self)
+    }
+
+    let playImage = UIImage(systemName: "play.circle")
+    let pauseImage = UIImage(systemName: "pause.circle")
+
+    weak var delegate: SoundWaveCellDelegate?
+    var isPlaying: Bool = false {
+        didSet {
+            if isPlaying {
+                playButton.setImage(playImage, for: .normal)
+            } else {
+                playButton.setImage(pauseImage, for: .normal)
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         colorView.layer.cornerRadius = 11
         colorView.layer.shadowColor = UIColor.black.cgColor
         colorView.layer.shadowOffset = CGSize(width: 0, height: 3)
@@ -28,6 +51,5 @@ class SoundWaveCell: UITableViewCell {
 
         clipsToBounds = false
         layer.masksToBounds = false
-
        }
 }
