@@ -17,10 +17,10 @@ class SoundWaveCell: UITableViewCell {
     @IBOutlet var playButton: UIButton!
 
     @IBAction func playButtonTapped(_ sender: UIButton) {
-        print(isPlaying)
+        print(isPlaying, 1)
         isPlaying = !isPlaying
         delegate?.soundWaveCellPlayButtonTapped(self)
-        print(isPlaying)
+        print(isPlaying, 2)
     }
 
     let playImage = UIImage(systemName: "play.circle")
@@ -29,7 +29,6 @@ class SoundWaveCell: UITableViewCell {
     weak var delegate: SoundWaveCellDelegate?
     var isPlaying: Bool = false {
         didSet {
-            print(isPlaying)
             if isPlaying {
                 playButton.setImage(pauseImage, for: .normal)
             } else {
@@ -41,7 +40,7 @@ class SoundWaveCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
-        colorView.layer.cornerRadius = 11
+        colorView.layer.cornerRadius = 10
         colorView.layer.shadowColor = UIColor.black.cgColor
         colorView.layer.shadowOffset = CGSize(width: 0, height: 3)
         colorView.layer.shadowOpacity = 0.4
