@@ -78,16 +78,10 @@ extension QuizViewController: SoundWaveCellDelegate {
         } catch {
             print("error activating audio session")
         }
-
         let audioFile = files[index]
-        if index == currentPlayingIndex {
-            currentPlayingFile?.play()
-        } else {
-            currentPlayingFile?.pause()
-            currentPlayingFile = audioFile
-            currentPlayingFile?.play()
-        }
-
+        currentPlayingFile?.pause()
+        currentPlayingFile = audioFile
+        currentPlayingFile?.play()
     }
 
     func pauseAudio() {
