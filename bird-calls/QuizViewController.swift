@@ -8,14 +8,34 @@
 
 import UIKit
 import AVFoundation
+import FDWaveformView
 
 class QuizViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
-    var avPlayer: AVAudioPlayer?
+    var playingCell: SoundWaveCell?
+    var currentPlayingIndex: Int? {
+        didSet {
+            if let index = currentPlayingIndex {
+                let file = files[index]
+                currentPlayingFile = file
+            }
+        }
+    }
+    var currentPlayingFile: AudioFile? {
+        didSet {
+            if let file = currentPlayingFile {
+                file.avPlayer?.delegate = self
+            }
+        }
+    }
 
-    var previousPlayingCell: SoundWaveCell?
+    var files = [
+        AudioFile(name: "XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3"),
+        AudioFile(name: "XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3"),
+        AudioFile(name: "XC55554 - Rufous-capped Spinetail - Synallaxis ruficapilla.mp3")
 
+    ]
     var filenames = ["XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3",
                      "XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3",
                      "XC55554 - Rufous-capped Spinetail - Synallaxis ruficapilla.mp3"]
@@ -24,6 +44,8 @@ class QuizViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SoundWaveCell", bundle: nil), forCellReuseIdentifier: "SoundWaveCell")
     }
+
+
 }
 
 extension QuizViewController: UITableViewDataSource {
@@ -36,7 +58,12 @@ extension QuizViewController: UITableViewDataSource {
                                                        for: indexPath) as? SoundWaveCell else {
             fatalError("Failed to dequeue SoundWaveCell")
         }
+        let audioFile = files[indexPath.row]
+        cell.waveFormView.audioURL = audioFile.url
+        cell.duration = audioFile.duration
         cell.delegate = self
+        cell.shouldReset = false
+        cell.isPlaying = false
         return cell
     }
 }
@@ -44,21 +71,28 @@ extension QuizViewController: UITableViewDataSource {
 extension QuizViewController: SoundWaveCellDelegate {
 
     func playAudio(index: Int) {
-        let filename = filenames[index]
-        let path = Bundle.main.path(forResource: filename, ofType: nil)!
-        let url = URL(fileURLWithPath: path)
         do {
-            avPlayer = try AVAudioPlayer(contentsOf: url)
-            avPlayer?.delegate = self
-            avPlayer?.play()
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+
         } catch {
-            print("error loading file")
+            print("error activating audio session")
+        }
+
+        let audioFile = files[index]
+        if index == currentPlayingIndex {
+            currentPlayingFile?.play()
+        } else {
+            currentPlayingFile?.pause()
+            currentPlayingFile = audioFile
+            currentPlayingFile?.play()
         }
 
     }
 
     func pauseAudio() {
-        avPlayer?.pause()
+        currentPlayingFile?.pause()
+        currentPlayingFile = nil
     }
 
     func soundWaveCellPlayButtonTapped(_ soundWaveCell: SoundWaveCell) {
@@ -68,12 +102,13 @@ extension QuizViewController: SoundWaveCellDelegate {
         }
         if soundWaveCell.isPlaying {
             playAudio(index: row)
-            if previousPlayingCell != soundWaveCell {
-                previousPlayingCell?.isPlaying = false
+            if let playingCell = playingCell {
+                playingCell.isPlaying = false
             }
-            previousPlayingCell = soundWaveCell
+            playingCell = soundWaveCell
         } else {
             pauseAudio()
+            playingCell = nil
         }
     }
 
@@ -82,7 +117,9 @@ extension QuizViewController: SoundWaveCellDelegate {
 extension QuizViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
-            previousPlayingCell?.isPlaying = false
+            playingCell?.isPlaying = false
+            playingCell?.shouldReset = true
+            playingCell = nil
         }
     }
 }

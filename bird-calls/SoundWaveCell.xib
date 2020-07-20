@@ -29,12 +29,20 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOU-ao-loa" customClass="FDWaveformView" customModule="FDWaveformView">
+                                <rect key="frame" x="70" y="0.0" width="271" height="98"/>
+                                <color key="backgroundColor" red="0.38709160510000001" green="0.38062552960000001" blue="0.84653120280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.38709160509163693" green="0.38062552962491841" blue="0.8465312027991726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="XOU-ao-loa" secondAttribute="bottom" id="6Sz-iN-S2N"/>
+                            <constraint firstItem="XOU-ao-loa" firstAttribute="leading" secondItem="iDh-Wy-C6r" secondAttribute="trailing" constant="10" id="DHZ-kM-DHz"/>
+                            <constraint firstAttribute="trailing" secondItem="XOU-ao-loa" secondAttribute="trailing" constant="10" id="d9l-ZO-Fl1"/>
                             <constraint firstItem="iDh-Wy-C6r" firstAttribute="centerY" secondItem="YdM-CP-Oi2" secondAttribute="centerY" id="g9W-rw-IKh"/>
                             <constraint firstAttribute="height" constant="98" id="gxR-bg-liH"/>
                             <constraint firstItem="iDh-Wy-C6r" firstAttribute="leading" secondItem="YdM-CP-Oi2" secondAttribute="leading" constant="10" id="llQ-XZ-eAC"/>
+                            <constraint firstItem="XOU-ao-loa" firstAttribute="top" secondItem="YdM-CP-Oi2" secondAttribute="top" id="xhF-22-qfb"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -50,6 +58,7 @@
             <connections>
                 <outlet property="colorView" destination="YdM-CP-Oi2" id="XZX-dX-pUn"/>
                 <outlet property="playButton" destination="iDh-Wy-C6r" id="vae-xX-o2B"/>
+                <outlet property="waveFormView" destination="XOU-ao-loa" id="xE9-bs-WET"/>
             </connections>
             <point key="canvasLocation" x="-190.57971014492756" y="91.741071428571431"/>
         </tableViewCell>
