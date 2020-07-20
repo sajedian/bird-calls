@@ -92,6 +92,7 @@ extension QuizViewController: SoundWaveCellDelegate {
 
     func pauseAudio() {
         currentPlayingFile?.pause()
+        currentPlayingFile = nil
     }
 
     func soundWaveCellPlayButtonTapped(_ soundWaveCell: SoundWaveCell) {
