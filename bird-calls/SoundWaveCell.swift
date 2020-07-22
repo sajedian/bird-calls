@@ -44,7 +44,7 @@ class SoundWaveCell: UITableViewCell {
         isPlaying = !isPlaying
         delegate?.soundWaveCellPlayButtonTapped(self)
     }
-
+    
 
     func animateWaveForm() {
         if shouldReset {
