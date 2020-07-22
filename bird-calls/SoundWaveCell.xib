@@ -9,17 +9,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SoundWaveCell" id="m4Q-45-HYh" customClass="SoundWaveCell" customModule="bird_calls" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="371" height="108"/>
+            <rect key="frame" x="0.0" y="0.0" width="371" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m4Q-45-HYh" id="obe-i0-DaB">
-                <rect key="frame" x="0.0" y="0.0" width="371" height="108"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m4Q-45-HYh" id="obe-i0-DaB">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-CP-Oi2" userLabel="ColorView">
-                        <rect key="frame" x="10" y="2" width="351" height="98"/>
+                        <rect key="frame" x="10" y="2" width="351" height="70"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDh-Wy-C6r">
-                                <rect key="frame" x="10" y="24" width="50" height="50"/>
+                                <rect key="frame" x="10" y="10" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="a9S-mA-9aj"/>
                                     <constraint firstAttribute="width" constant="50" id="buV-xZ-JKy"/>
@@ -30,7 +30,7 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOU-ao-loa" customClass="FDWaveformView" customModule="FDWaveformView">
-                                <rect key="frame" x="70" y="0.0" width="271" height="98"/>
+                                <rect key="frame" x="70" y="0.0" width="271" height="70"/>
                                 <color key="backgroundColor" red="0.38709160510000001" green="0.38062552960000001" blue="0.84653120280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -38,9 +38,9 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="XOU-ao-loa" secondAttribute="bottom" id="6Sz-iN-S2N"/>
                             <constraint firstItem="XOU-ao-loa" firstAttribute="leading" secondItem="iDh-Wy-C6r" secondAttribute="trailing" constant="10" id="DHZ-kM-DHz"/>
+                            <constraint firstAttribute="height" constant="70" id="Tl1-0s-lAH"/>
                             <constraint firstAttribute="trailing" secondItem="XOU-ao-loa" secondAttribute="trailing" constant="10" id="d9l-ZO-Fl1"/>
                             <constraint firstItem="iDh-Wy-C6r" firstAttribute="centerY" secondItem="YdM-CP-Oi2" secondAttribute="centerY" id="g9W-rw-IKh"/>
-                            <constraint firstAttribute="height" constant="98" id="gxR-bg-liH"/>
                             <constraint firstItem="iDh-Wy-C6r" firstAttribute="leading" secondItem="YdM-CP-Oi2" secondAttribute="leading" constant="10" id="llQ-XZ-eAC"/>
                             <constraint firstItem="XOU-ao-loa" firstAttribute="top" secondItem="YdM-CP-Oi2" secondAttribute="top" id="xhF-22-qfb"/>
                         </constraints>
