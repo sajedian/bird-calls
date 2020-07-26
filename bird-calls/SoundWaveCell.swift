@@ -19,7 +19,12 @@ class SoundWaveCell: UITableViewCell {
     @IBOutlet var playButton: UIButton!
     @IBOutlet var waveFormView: FDWaveformView!
 
-    var animator: UIViewPropertyAnimator?
+    var animator: UIViewPropertyAnimator? {
+        willSet {
+            animator?.stopAnimation(true)
+            waveFormView.highlightedSamples = 0..<0
+        }
+    }
     var duration: TimeInterval?
     weak var delegate: SoundWaveCellDelegate?
 
@@ -45,13 +50,9 @@ class SoundWaveCell: UITableViewCell {
         delegate?.soundWaveCellPlayButtonTapped(self)
     }
 
-
-
     func animateWaveForm() {
         if shouldReset {
-            animator?.stopAnimation(true)
             guard let duration = duration else { return }
-            waveFormView.highlightedSamples = 0..<0
             animator = UIViewPropertyAnimator(duration: duration, curve: .linear) { [unowned self] in
                         let totalSamples = self.waveFormView.totalSamples
                         self.waveFormView.highlightedSamples = 0..<totalSamples
@@ -68,7 +69,6 @@ class SoundWaveCell: UITableViewCell {
             animator.pauseAnimation()
         }
     }
-
 
     override func awakeFromNib() {
         super.awakeFromNib()
