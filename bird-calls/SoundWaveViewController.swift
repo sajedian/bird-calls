@@ -10,8 +10,7 @@ import UIKit
 import AVFoundation
 import FDWaveformView
 
-class QuizViewController: UIViewController {
-    @IBOutlet var tableView: UITableView!
+class SoundWaveViewController: UITableViewController {
 
     var playingCell: SoundWaveCell?
     var currentPlayingIndex: Int? {
@@ -41,19 +40,14 @@ class QuizViewController: UIViewController {
                      "XC55554 - Rufous-capped Spinetail - Synallaxis ruficapilla.mp3"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
         tableView.register(UINib(nibName: "SoundWaveCell", bundle: nil), forCellReuseIdentifier: "SoundWaveCell")
     }
 
-
-}
-
-extension QuizViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SoundWaveCell",
                                                        for: indexPath) as? SoundWaveCell else {
             fatalError("Failed to dequeue SoundWaveCell")
@@ -68,7 +62,7 @@ extension QuizViewController: UITableViewDataSource {
     }
 }
 
-extension QuizViewController: SoundWaveCellDelegate {
+extension SoundWaveViewController: SoundWaveCellDelegate {
 
     func playAudio(index: Int) {
         do {
@@ -114,7 +108,7 @@ extension QuizViewController: SoundWaveCellDelegate {
 
 }
 
-extension QuizViewController: AVAudioPlayerDelegate {
+extension SoundWaveViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             playingCell?.isPlaying = false
