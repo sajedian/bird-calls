@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdm-sQ-aKI">
-                                <rect key="frame" x="0.0" y="98" width="414" height="270"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="hBA-Ro-qSn"/>
+                                    <constraint firstAttribute="height" constant="240" id="hBA-Ro-qSn"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="Hlm-zy-t2r" kind="embed" id="T1D-1a-NCc"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twn-Az-iQ1">
-                                <rect key="frame" x="0.0" y="378" width="414" height="435"/>
+                                <rect key="frame" x="0.0" y="338" width="414" height="475"/>
                                 <connections>
                                     <segue destination="FAI-l2-bnZ" kind="embed" id="fNu-4p-J6X"/>
                                 </connections>
@@ -36,7 +36,7 @@
                         <constraints>
                             <constraint firstItem="mdm-sQ-aKI" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="2nW-uI-dps"/>
                             <constraint firstItem="twn-Az-iQ1" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="aoo-BA-BgI"/>
-                            <constraint firstItem="twn-Az-iQ1" firstAttribute="top" secondItem="mdm-sQ-aKI" secondAttribute="bottom" constant="10" id="fgs-7d-sOA"/>
+                            <constraint firstItem="twn-Az-iQ1" firstAttribute="top" secondItem="mdm-sQ-aKI" secondAttribute="bottom" id="fgs-7d-sOA"/>
                             <constraint firstItem="mdm-sQ-aKI" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="10" id="hMd-L5-34m"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="twn-Az-iQ1" secondAttribute="trailing" id="ibU-dr-z9b"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="twn-Az-iQ1" secondAttribute="bottom" id="kzO-zr-s11"/>
@@ -55,7 +55,7 @@
             <objects>
                 <tableViewController id="Hlm-zy-t2r" customClass="SoundWaveViewController" customModule="bird_calls" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="13N-W6-x73">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
@@ -72,25 +72,25 @@
         <scene sceneID="mUW-j7-gY9">
             <objects>
                 <collectionViewController id="FAI-l2-bnZ" customClass="BirdOptionsCollectionViewController" customModule="bird_calls" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BcP-jc-Oce">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="435"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" id="BcP-jc-Oce">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kLN-Ss-eFB">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yXd-Ox-XYI">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BirdCollectionViewCell" id="6TQ-1m-bZG" customClass="BirdCollectionViewCell" customModule="bird_calls" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="BirdCollectionViewCell" id="6TQ-1m-bZG" customClass="BirdCollectionViewCell" customModule="bird_calls" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Ix-B9-mPU">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-tf-a8R">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-tf-a8R">
                                             <rect key="frame" x="10" y="10" width="108" height="87"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeq-GC-P0x">
@@ -124,7 +124,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pf0-Gf-FuP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2537" y="31"/>
+            <point key="canvasLocation" x="2534.7826086956525" y="30.46875"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">

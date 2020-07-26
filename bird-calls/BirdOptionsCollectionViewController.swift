@@ -33,23 +33,28 @@ class BirdOptionsCollectionViewController: UICollectionViewController {
                                                             for: indexPath) as? BirdCollectionViewCell else {
             fatalError("Failed to dequeue BirdCollectionViewCell")
         }
+        let image = UIImage(named: "cardinal.jpg")?.scaled(toHeight: 100)
+        cell.birdImageView.image = image
+
         cell.nameLabel.text = "Cardinal"
         return cell
     }
+
 }
 
 extension BirdOptionsCollectionViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ : UICollectionView, layout: UICollectionViewLayout, sizeForItemAt: IndexPath) -> CGSize {
-        let width = collectionView.frame.size.width / 2 - 10
-        let height = collectionView.frame.size.height / 2 - 10
+        let width = collectionView.frame.size.width / 2 - 15
+        let height = collectionView.frame.size.height / 2 - 15
         return CGSize(width: width, height: height)
+
     }
 
     func collectionView(_ : UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        let cellWidthPadding = CGFloat(1)
-        let cellHeightPadding = CGFloat(1)
+        let cellWidthPadding = CGFloat(10)
+        let cellHeightPadding = CGFloat(10)
         return UIEdgeInsets(top: cellHeightPadding, left: cellWidthPadding,
                             bottom: cellHeightPadding, right: cellWidthPadding)
     }
