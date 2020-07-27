@@ -30,7 +30,7 @@ class SoundWaveViewController: UITableViewController {
     }
 
     var files = [
-        AudioFile(name: "XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3"),
+        AudioFile(name: "rose-breasted-grosbeak-1.m4a"),
         AudioFile(name: "XC46782 - Neblina Tapaculo - Scytalopus altirostris.mp3"),
         AudioFile(name: "XC55554 - Rufous-capped Spinetail - Synallaxis ruficapilla.mp3")
 

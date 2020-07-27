@@ -26,6 +26,7 @@
 		9E525A6424CDF91400D7F2CC /* cardinal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E525A6324CDF91400D7F2CC /* cardinal.jpg */; };
 		9E525A6624CDFEDF00D7F2CC /* BirdOptionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E525A6524CDFEDF00D7F2CC /* BirdOptionsCollectionViewController.swift */; };
 		9E525A6824CE0AF100D7F2CC /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E525A6724CE0AF100D7F2CC /* UIImage+Extensions.swift */; };
+		9E525A6A24CE18F200D7F2CC /* rose-breasted-grosbeak-1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9E525A6924CE18F200D7F2CC /* rose-breasted-grosbeak-1.m4a */; };
 		9E70017724C396420054D2D7 /* FDWaveformView in Frameworks */ = {isa = PBXBuildFile; productRef = 9E70017624C396420054D2D7 /* FDWaveformView */; };
 		9E70017924C604B00054D2D7 /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E70017824C604B00054D2D7 /* AudioFile.swift */; };
 		9E70017B24C8C4F10054D2D7 /* BirdCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E70017A24C8C4F10054D2D7 /* BirdCardView.xib */; };
@@ -74,6 +75,7 @@
 		9E525A6324CDF91400D7F2CC /* cardinal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardinal.jpg; sourceTree = SOURCE_ROOT; };
 		9E525A6524CDFEDF00D7F2CC /* BirdOptionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdOptionsCollectionViewController.swift; sourceTree = "<group>"; };
 		9E525A6724CE0AF100D7F2CC /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		9E525A6924CE18F200D7F2CC /* rose-breasted-grosbeak-1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "rose-breasted-grosbeak-1.m4a"; path = "../../bird_files/Cardinalidae (Cardinals, Tanagers, Buntings, Grosbeaks) /Rose-breasted Grosbeak/rose-breasted-grosbeak-1.m4a"; sourceTree = "<group>"; };
 		9E70017824C604B00054D2D7 /* AudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
 		9E70017A24C8C4F10054D2D7 /* BirdCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirdCardView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 				9E3DE57324C219F70094D078 /* SecondViewController.swift */,
 				9E3DE5A124C21D360094D078 /* SoundWaveCell.swift */,
 				9E3DE57524C219F70094D078 /* Main.storyboard */,
+				9E525A6924CE18F200D7F2CC /* rose-breasted-grosbeak-1.m4a */,
 				9E525A6324CDF91400D7F2CC /* cardinal.jpg */,
 				9E525A6524CDFEDF00D7F2CC /* BirdOptionsCollectionViewController.swift */,
 				9E525A6724CE0AF100D7F2CC /* UIImage+Extensions.swift */,
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E70017B24C8C4F10054D2D7 /* BirdCardView.xib in Resources */,
+				9E525A6A24CE18F200D7F2CC /* rose-breasted-grosbeak-1.m4a in Resources */,
 				9E3DE5A924C24AC40094D078 /* XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3 in Resources */,
 				9E3DE57C24C219FB0094D078 /* LaunchScreen.storyboard in Resources */,
 				9E3DE5A024C21CD60094D078 /* SoundWaveCell.xib in Resources */,
