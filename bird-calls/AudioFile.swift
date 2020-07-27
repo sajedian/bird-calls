@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class AudioFile {
+struct AudioFile {
     var name: String
     var duration: TimeInterval?
     var avPlayer: AVAudioPlayer?

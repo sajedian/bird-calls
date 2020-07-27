@@ -12,17 +12,54 @@ import XCTest
 // swiftlint:disable type_name
 class bird_callsTests: XCTestCase {
 
+    var audioFile: AudioFile!
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        audioFile = AudioFile(name: "XC10000 - Thrush-like Antpitta - Myrmothera campanisona signata.mp3")
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAudioFileNotNil() {
+        XCTAssertNotNil(audioFile, "audioFile was nil")
+    }
+
+    func testURLNotNil() {
+        XCTAssertNotNil(audioFile.url, "audioFile url was nil")
+    }
+
+    func testAVPlayerNotNil() {
+        XCTAssertNotNil(audioFile.avPlayer, "audioFile avPlayer was nil")
+    }
+
+    func testDurationIsCorrect() {
+        XCTAssertEqual(audioFile.duration, 29.7, "audioFile duration was not 29.7s")
+    }
+
+    func testAVPlayerDuration() {
+        XCTAssertEqual(audioFile.avPlayer?.duration, 29.7, "audioFile avPlayer duration was not 29.7s")
+    }
+
+    func testPlayFunctionWorks() {
+        guard let avPlayer = audioFile.avPlayer else {
+            XCTFail("avPlayer is nil")
+            return
+        }
+        audioFile.play()
+        XCTAssertTrue(avPlayer.isPlaying, "play function failed to play avPlayer")
+    }
+
+    func testPauseFunctionWorks() {
+        guard let avPlayer = audioFile.avPlayer else {
+            XCTFail("avPlayer is nil")
+            return
+        }
+        audioFile.play()
+        audioFile.pause()
+        XCTAssertFalse(avPlayer.isPlaying, "pause function failed to pause avPlayer")
     }
 
     func testPerformanceExample() throws {
@@ -31,5 +68,4 @@ class bird_callsTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

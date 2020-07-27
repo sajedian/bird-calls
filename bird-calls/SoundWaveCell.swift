@@ -59,15 +59,11 @@ class SoundWaveCell: UITableViewCell {
             }
             shouldReset = false
         }
-        if let animator = animator {
-            animator.startAnimation()
-        }
+        animator?.startAnimation()
     }
 
     func pauseAnimateWaveForm() {
-        if let animator = animator {
-            animator.pauseAnimation()
-        }
+        animator?.pauseAnimation()
     }
 
     override func awakeFromNib() {
@@ -89,7 +85,11 @@ class SoundWaveCell: UITableViewCell {
 
         waveFormView.wavesColor = UIColor.white.withAlphaComponent(0.75)
         waveFormView.progressColor = .green
+        waveFormView.doesAllowScroll = false
+        waveFormView.doesAllowStretch = false
+        waveFormView.doesAllowScrubbing = false
         waveFormView.delegate = self
+
        }
 
 }
