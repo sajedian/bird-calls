@@ -36,11 +36,9 @@ class BirdOptionsCollectionViewController: UICollectionViewController {
         let image = UIImage(named: "cardinal.jpg")?.scaled(toHeight: 100)
         cell.birdImageView.image = image
 
-        cell.nameLabel.text = "Cardinal"
+        cell.nameLabel.text = "Rose-breasted Grosbeak"
         return cell
     }
-
-
 }
 
 extension BirdOptionsCollectionViewController: UICollectionViewDelegateFlowLayout {
