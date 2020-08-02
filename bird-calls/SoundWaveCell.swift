@@ -69,7 +69,7 @@ class SoundWaveCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
-        colorView.layer.cornerRadius = 10
+        colorView.layer.cornerRadius = 8
         colorView.layer.shadowColor = UIColor.black.cgColor
         colorView.layer.shadowOffset = CGSize(width: 0, height: 3)
         colorView.layer.shadowOpacity = 0.4

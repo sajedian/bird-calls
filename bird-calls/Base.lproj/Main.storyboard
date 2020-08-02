@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdm-sQ-aKI">
-                                <rect key="frame" x="0.0" y="98" width="414" height="240"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="hBA-Ro-qSn"/>
+                                    <constraint firstAttribute="height" constant="160" id="hBA-Ro-qSn"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="Hlm-zy-t2r" kind="embed" id="T1D-1a-NCc"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twn-Az-iQ1">
-                                <rect key="frame" x="0.0" y="338" width="414" height="475"/>
+                                <rect key="frame" x="0.0" y="258" width="414" height="555"/>
                                 <connections>
                                     <segue destination="FAI-l2-bnZ" kind="embed" id="fNu-4p-J6X"/>
                                 </connections>
@@ -55,7 +55,7 @@
             <objects>
                 <tableViewController id="Hlm-zy-t2r" customClass="SoundWaveViewController" customModule="bird_calls" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="13N-W6-x73">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
@@ -73,7 +73,7 @@
             <objects>
                 <collectionViewController id="FAI-l2-bnZ" customClass="BirdOptionsCollectionViewController" customModule="bird_calls" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" id="BcP-jc-Oce">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="475"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="555"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yXd-Ox-XYI">
@@ -90,24 +90,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-tf-a8R">
-                                            <rect key="frame" x="10" y="10" width="108" height="87"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-tf-a8R">
+                                            <rect key="frame" x="10" y="10" width="108" height="87.5"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeq-GC-P0x">
-                                            <rect key="frame" x="43" y="107" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeq-GC-P0x">
+                                            <rect key="frame" x="10" y="107.5" width="108" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.66666668650000005" green="0.26320867450000002" blue="0.54099462499999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
-                                        <constraint firstItem="Oeq-GC-P0x" firstAttribute="top" secondItem="gIt-tf-a8R" secondAttribute="bottom" constant="10" id="15g-u1-0NX"/>
+                                        <constraint firstItem="Oeq-GC-P0x" firstAttribute="leading" secondItem="6Ix-B9-mPU" secondAttribute="leading" constant="10" id="19b-6S-M1g"/>
+                                        <constraint firstAttribute="trailing" secondItem="Oeq-GC-P0x" secondAttribute="trailing" constant="10" id="BWx-Va-z0d"/>
                                         <constraint firstItem="gIt-tf-a8R" firstAttribute="leading" secondItem="6Ix-B9-mPU" secondAttribute="leading" constant="10" id="DbL-lU-P0J"/>
                                         <constraint firstAttribute="bottom" secondItem="Oeq-GC-P0x" secondAttribute="bottom" id="FW7-7K-QBx"/>
                                         <constraint firstItem="Oeq-GC-P0x" firstAttribute="centerX" secondItem="6Ix-B9-mPU" secondAttribute="centerX" id="Ouw-d1-ZNa"/>
                                         <constraint firstAttribute="trailing" secondItem="gIt-tf-a8R" secondAttribute="trailing" constant="10" id="kIo-Bo-2SN"/>
                                         <constraint firstItem="gIt-tf-a8R" firstAttribute="top" secondItem="6Ix-B9-mPU" secondAttribute="top" constant="10" id="nCm-lk-5O8"/>
+                                        <constraint firstItem="Oeq-GC-P0x" firstAttribute="top" secondItem="gIt-tf-a8R" secondAttribute="bottom" constant="10" id="tw4-aU-Fdr"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
